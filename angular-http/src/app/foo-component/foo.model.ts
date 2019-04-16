@@ -1,5 +1,4 @@
-export class Foo
-{
+export class Foo {
     userId:number;
     id:number;
     title:string;

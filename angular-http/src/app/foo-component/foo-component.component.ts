@@ -8,6 +8,7 @@ import {Foo} from './foo.model';
   templateUrl: './foo-component.component.html',
   styleUrls: ['./foo-component.component.css']
 })
+
 export class FooComponentComponent implements OnInit {
 
   fooData : Foo[];
@@ -18,19 +19,17 @@ export class FooComponentComponent implements OnInit {
   constructor(public http: HttpClient) { }
 
   makeRequest(): void {
-
     this.loading = true;
     this.o = this.http.get('https://jsonplaceholder.typicode.com/posts/1');
     this.o.subscribe(this.getData);
   }
+
   getData = (d: Object) => {
     this.data = d;
     this.loading = false;
   }
 
-
-
-  //Nota bene, questo è un metodo alternativo al metodo makeRequest
+  //metodo alternativo al metodo makeRequest
   makeCompactRequest(): void {
     this.loading = true;
     this.http
@@ -61,12 +60,10 @@ export class FooComponentComponent implements OnInit {
 
   makeTypedRequest() : void
   {
-    //oFoo : Observable<Foo[]>; va dichiarato tra gli attributi della classe
     this.oFoo = this.http.get<Foo[]>('https://jsonplaceholder.typicode.com/posts');
     this.oFoo.subscribe(data => {this.fooData = data;});
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
