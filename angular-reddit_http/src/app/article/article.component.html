@@ -1,4 +1,10 @@
-<div class="card-header">
+<h2>Basic Request</h2>
+<button type="button" (click)="makeRequest()">Make Request</button>
+<div *ngIf="loading">loading...</div>
+<pre>{{data | json}}</pre>
+
+
+<!-- <div class="card-header">
       <h3>{{ article.votes }} Points </h3>
   </div>
   <div class="card-body">
@@ -10,4 +16,4 @@
         <a href (click)="voteUp()" class="btn btn-secondary"> upvote </a>
         <a href (click)="voteDown()" class="btn btn-secondary"> downvote </a>
     </div>
-  </div>
+  </div> -->
