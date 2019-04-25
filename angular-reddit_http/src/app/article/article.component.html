@@ -3,6 +3,10 @@
 <div *ngIf="loading">loading...</div>
 <pre>{{data | json}}</pre>
 
+<hr>
+
+<button type="button" (click)="makeCompactPost()">Make Post</button>
+
 
 <!-- <div class="card-header">
       <h3>{{ article.votes }} Points </h3>

@@ -14,27 +14,34 @@ export class ArticleComponent implements OnInit {
    o :Observable<Object>;
 
     constructor(public http: HttpClient) {}
-   makeRequest(): void {
-     console.log("here");
-     this.loading = true;
-     this.o = this.http.get('https://jsonplaceholder.typicode.com/posts/1');
-     this.o.subscribe(this.getData);
-   }
-   getData = (d : Object) =>
-   {
-     this.data = new Object(d);
-     this.loading = false;
-   }
 
-   /*voteUp(): Boolean {
-      this.article.voteUp();
-      return false;
+    makeRequest(): void {
+      this.loading = true;
+      this.o = this.http.get('https://jsonplaceholder.typicode.com/posts/1');
+      this.o.subscribe(this.getData);
     }
 
-    voteDown():Boolean {
-      this.article.voteDown();
-      return false;
-    }*/
+    getData = (d : Object) =>
+    {
+      this.data = new Object(d);
+      this.loading = false;
+    }
+
+    makeCompactPost(): void {
+      this.loading = true;
+      this.http
+        .post('https://jsonplaceholder.typicode.com/posts',
+          JSON.stringify({
+            body: 'bar',
+            title: 'article',
+            userId: 1
+          })
+        )
+        .subscribe(data => {
+          this.data = data;
+          this.loading = false;
+      });
+    }
 
 
     ngOnInit() {}
