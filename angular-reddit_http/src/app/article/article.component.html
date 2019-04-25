@@ -13,25 +13,18 @@
 
 <div *ngFor="let art of articleData">
   <div class="card-header">
-    <h3 class="text-primary text-capitalize font-weight-bold">{{art.title}}</h3>
-    <b>Articolo {{art.id}} di utente #: {{art.userId}}</b>
-    <div class="card-body">
-       {{art.body}}
-    </div>
-  </div>
-</div>
-
-
-<!-- <div class="card-header">
-      <h3>{{ article.votes }} Points </h3>
+    <h3>{{art.votes}} Points </h3>
   </div>
   <div class="card-body">
-    <a href="{{ article.link }}">{{ article.title }}</a>
-    <span class="badge badge-pill badge-info">{{article.domain()}}</span>
+    <h3 class="text-primary text-capitalize font-weight-bold">{{art.title}}</h3>
+    <b>Articolo {{art.id}} di utente #: {{art.userId}}</b>
+    <p> {{art.body}} </p>
   </div>
   <div class="card-footer">
      <div class="btn-group">
         <a href (click)="voteUp()" class="btn btn-secondary"> upvote </a>
         <a href (click)="voteDown()" class="btn btn-secondary"> downvote </a>
     </div>
-  </div> -->
+  </div>
+  <br>
+</div>

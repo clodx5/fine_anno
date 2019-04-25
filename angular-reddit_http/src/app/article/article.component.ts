@@ -12,7 +12,7 @@ export class ArticleComponent implements OnInit {
    articleData: Article[];
    data: Object;
    loading: boolean;
-   o :Observable<Object>;
+   o: Observable<Object>;
    oArticle : Observable<Article[]>;
 
     constructor(public http: HttpClient) {}
@@ -44,13 +44,10 @@ export class ArticleComponent implements OnInit {
       });
     }
 
-
     makeTypedRequest() : void {
       this.oArticle = this.http.get<Article[]>('https://jsonplaceholder.typicode.com/posts');
       this.oArticle.subscribe(data => {this.articleData = data;});
     }
-
-
 
     ngOnInit() {}
 
