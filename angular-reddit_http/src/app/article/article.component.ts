@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
+   articleData: Article[];
    data: Object;
    loading: boolean;
    o :Observable<Object>;
+   oArticle : Observable<Article[]>;
 
     constructor(public http: HttpClient) {}
 
@@ -21,8 +23,7 @@ export class ArticleComponent implements OnInit {
       this.o.subscribe(this.getData);
     }
 
-    getData = (d : Object) =>
-    {
+    getData = (d : Object) => {
       this.data = new Object(d);
       this.loading = false;
     }
@@ -42,6 +43,13 @@ export class ArticleComponent implements OnInit {
           this.loading = false;
       });
     }
+
+
+    makeTypedRequest() : void {
+      this.oArticle = this.http.get<Article[]>('https://jsonplaceholder.typicode.com/posts');
+      this.oArticle.subscribe(data => {this.articleData = data;});
+    }
+
 
 
     ngOnInit() {}
