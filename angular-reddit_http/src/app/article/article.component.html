@@ -1,11 +1,25 @@
-<h2>Basic Request</h2>
-<button type="button" (click)="makeRequest()">Make Request</button>
+<h2>Angular Reddit Http</h2>
+<button type="button" (click)="makeRequest()" class="btn btn-secondary">Make Request</button>
 <div *ngIf="loading">loading...</div>
 <pre>{{data | json}}</pre>
 
 <hr>
 
-<button type="button" (click)="makeCompactPost()">Make Post</button>
+<button type="button" (click)="makeCompactPost()" class="btn btn-secondary">Make Post</button>
+
+<hr>
+
+<button type="button" (click)="makeTypedRequest()" class="btn btn-primary">Make typed request</button>
+
+<div *ngFor="let art of articleData">
+  <div class="card-header">
+    <h3 class="text-primary text-capitalize font-weight-bold">{{art.title}}</h3>
+    <b>Articolo {{art.id}} di utente #: {{art.userId}}</b>
+    <div class="card-body">
+       {{art.body}}
+    </div>
+  </div>
+</div>
 
 
 <!-- <div class="card-header">
