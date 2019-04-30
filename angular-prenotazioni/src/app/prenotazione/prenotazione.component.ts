@@ -8,7 +8,7 @@ import { Prenotazione } from './prenotazione.model';
 })
 export class PrenotazioneComponent implements OnInit {
   @HostBinding('attr.class') cssClass = 'card';
-  @Input() prenotazione: Prenotazione
+  @Input() prenotazione: Prenotazione;
 
   constructor() { }
 
