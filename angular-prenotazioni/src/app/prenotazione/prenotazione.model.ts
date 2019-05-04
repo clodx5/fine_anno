@@ -1,20 +1,20 @@
 export class Prenotazione {
-  nome: string;
-  cognome: string;
-  indirizzo: string;
-  telefono: string;
-  email: string;
-  dataP: string;
-  oraP: string;
+  Nome: string;
+  Cognome: string;
+  Indirizzo: string;
+  Telefono: string;
+  Email: string;
+  Data: string;
+  Ora: string;
 
-  constructor(nome: string, cognome: string, indirizzo: string, telefono: string, email: string, dataP: string, oraP: string) {
-    this.nome = nome;
-    this.cognome = cognome;
-    this.indirizzo = indirizzo;
-    this.telefono = telefono;
-    this.email = email;
-    this.dataP = dataP;
-    this.oraP = oraP;
+  constructor(Nome: string, Cognome: string, Indirizzo: string, Telefono: string, Email: string, Data: string, Ora: string) {
+    this.Nome = Nome;
+    this.Cognome = Cognome;
+    this.Indirizzo = Indirizzo;
+    this.Telefono = Telefono;
+    this.Email = Email;
+    this.Data = Data;
+    this.Ora = Ora;
   }
 
 }
