@@ -29,12 +29,12 @@ export class AppComponent {
   ricevidati = (data) => {
     for(let element of data)
     {
-       this.prenotazioni.push(new Prenotazione(element.nome, element.cognome, element.indirizzo, element.telefono, element.email, element.dataP, element.oraP));
+       this.prenotazioni.push(new Prenotazione(element.Nome, element.Cognome, element.Indirizzo, element.Telefono, element.Email, element.Data, element.Ora));
     }
   }
 
-  makeCompactRequest(nome: HTMLInputElement, cognome: HTMLInputElement, indirizzo: HTMLInputElement, telefono: HTMLInputElement, email: HTMLInputElement, dataP: HTMLInputElement, oraP: HTMLInputElement): boolean {
-    this.tempPren = new Prenotazione(nome.value, cognome.value, indirizzo.value, telefono.value, email.value, dataP.value, oraP.value);
+  makeCompactRequest(Nome: HTMLInputElement, Cognome: HTMLInputElement, Indirizzo: HTMLInputElement, Telefono: HTMLInputElement, Email: HTMLInputElement, Data: HTMLInputElement, Ora: HTMLInputElement): boolean {
+    this.tempPren = new Prenotazione(Nome.value, Cognome.value, Indirizzo.value, Telefono.value, Email.value, Data.value, Ora.value);
     this.loading = true;
     this.postPren = this.http.post('https://my-json-server.typicode.com/Lucas2000s/InformaticaMilazzo/prenotazioni', JSON.stringify(this.tempPren));
 
