@@ -1,6 +1,5 @@
 <ul>
-    <li><a [class.selected]="prenotazione === selectedPren" (click)="onSelect(prenotazione)" href="">
+    <li [class.selected]="prenotazione === selectedPren" (click)="onSelect(prenotazione)">
         {{ prenotazione.Data }} - {{ prenotazione.Ora }} -> {{ prenotazione.Nome }} {{ prenotazione.Cognome }}
-        </a>
    </li>
 <ul>
