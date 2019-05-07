@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PrenotazioneComponent } from './prenotazione/prenotazione.component';
+import { DettaglioComponent } from './dettaglio/dettaglio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrenotazioneComponent
+    PrenotazioneComponent,
+    DettaglioComponent
   ],
   imports: [
     BrowserModule, NgbModule, HttpClientModule

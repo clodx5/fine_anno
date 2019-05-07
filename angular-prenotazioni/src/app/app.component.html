@@ -11,16 +11,18 @@
         <label>Ora Prenotazione:</label><input name="Ora" #neworaP class="form-control">
       </div>
     <button (click)="makeCompactRequest(newnome, newcognome, newindirizzo, newtelefono, newemail, newdataP, neworaP)" class="btn btn-primary">
-    <!--<button (click)="addArticle(newtitle, newlink)" class="btn btn-primary">-->
       Prenota
     </button>
   </form>
 </div>
 
-<!-- <pre>{{data | json}}</pre> -->
-
 <div class="container">
   <h3 class="display-4">Lista prenotazioni</h3>
   <app-prenotazione *ngFor="let pren of prenotazioni" [prenotazione]="pren"></app-prenotazione>
+</div>
+
+<div class="container">
+  <h3 class="display-4">Dettagli</h3>
+  <app-dettaglio *ngIf="selectedPren" [dettaglio]="selectedPren"></app-dettaglio>
 </div>
 
