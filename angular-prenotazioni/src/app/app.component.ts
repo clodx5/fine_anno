@@ -37,7 +37,7 @@ export class AppComponent {
     this.tempPren = new Prenotazione(Nome.value, Cognome.value, Indirizzo.value, Telefono.value, Email.value, Data.value, Ora.value);
     this.loading = true;
     this.postPren = this.http.post('https://my-json-server.typicode.com/Lucas2000s/InformaticaMilazzo/prenotazioni', JSON.stringify(this.tempPren));
-
+    this.prenotazioni.push(new Prenotazione(Nome.value, Cognome.value, Indirizzo.value, Telefono.value, Email.value, Data.value, Ora.value));
 
     this.postPren.subscribe(data => {
       this.data = data;
