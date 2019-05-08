@@ -18,11 +18,13 @@
 
 <div class="container">
   <h3 class="display-4">Lista prenotazioni</h3>
-  <app-prenotazione *ngFor="let pren of prenotazioni" [prenotazione]="pren"></app-prenotazione>
+  <ul>
+    <app-prenotazione *ngFor="let pren of prenotazioni" [prenotazione]="pren" (click)="vedi(pren)"></app-prenotazione>
+  </ul>
 </div>
 
 <div class="container">
   <h3 class="display-4">Dettagli</h3>
-  <app-dettaglio *ngIf="selectedPren" [dettaglio]="selectedPren"></app-dettaglio>
+  <app-dettaglio [dettaglio]="selectedPren"></app-dettaglio>
 </div>
 

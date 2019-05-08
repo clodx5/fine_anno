@@ -18,6 +18,7 @@ export class AppComponent {
   oPren: Observable<Prenotazione[]>;
   postPren: Observable<Object>;
   tempPren: Prenotazione;
+  selectedPren: Prenotazione;
 
    constructor(public http: HttpClient) {
     //get
@@ -46,6 +47,11 @@ export class AppComponent {
     });
 
     return false;
+  }
+
+  //visualizzazione dettagli
+  vedi(prenSel:Prenotazione) {
+      this.selectedPren = prenSel;
   }
 
 

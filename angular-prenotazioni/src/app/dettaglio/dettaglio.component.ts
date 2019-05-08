@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Prenotazione } from '../prenotazione/prenotazione.model';
-import { PrenotazioneComponent } from '../prenotazione/prenotazione.component';
 
 @Component({
   selector: 'app-dettaglio',
