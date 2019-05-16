@@ -1,5 +1,9 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 
+* {
+  font-family: Arial;
+}
+
 .componenti {
-  margin-top:100px;
+  margin-top: 100px;
 }
