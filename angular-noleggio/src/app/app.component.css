@@ -1,1 +1,5 @@
-@import '~bootstrap/dist/css/bootstrap.css'
+@import '~bootstrap/dist/css/bootstrap.css';
+
+.componenti {
+  margin-top:100px;
+}
