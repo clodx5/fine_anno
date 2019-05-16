@@ -1,1 +1,10 @@
 @import '~bootstrap/dist/css/bootstrap.css';
+
+#registrati {
+  background-color: orange;
+  color: white;
+}
+
+#registrati:hover {
+  background-color: orangered;
+}
