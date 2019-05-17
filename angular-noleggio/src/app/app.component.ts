@@ -19,5 +19,19 @@ export class AppComponent {
   postUt: Observable<Object>;
   tempUt: Registrazione;
 
+  makeCompactRequest(nome: HTMLInputElement, cognome: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement, sesso: HTMLInputElement): boolean {
+    this.tempUt = new Registrazione(nome.value, cognome.value, email.value, username.value, password.value, cartaCredito.value, sesso.value);
+    this.loading = true;
+    this.postUt = this.http.post('link', JSON.stringify(this.tempUt));
+    this.utenti.push(new Registrazione(nome.value, cognome.value, email.value, username.value, password.value, cartaCredito.value, sesso.value));
+
+    this.postUt.subscribe(data => {
+      this.data = data;
+      this.loading = false;
+      this.utenti.push(this.tempUt);
+    });
+
+    return false;
+  }
 
 }

@@ -1,4 +1,4 @@
-export class Prenotazione {
+export class Registrazione {
   nome: string;
   cognome: string;
   email: string;
