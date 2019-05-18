@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Mono-Rent';
+  title = 'AngularNoleggio';
 
   utenti: Registrazione[];
   data: Object;
@@ -18,6 +18,26 @@ export class AppComponent {
   oUt: Observable<Registrazione[]>;
   postUt: Observable<Object>;
   tempUt: Registrazione;
+
+  public isViewable1: boolean;
+  public isViewable2: boolean;
+  public isViewable3: boolean;
+  public isViewable4: boolean;
+  public isViewable5: boolean;
+
+  constructor(public http: HttpClient) {
+    //get
+    this.utenti = new Array<Registrazione>();
+    this.oUt = this.http.get<Registrazione[]>('link');
+    this.oUt.subscribe(this.ricevidati);
+  }
+
+  ricevidati = (data) => {
+    for(let element of data)
+    {
+       this.utenti.push(new Registrazione(element.nome, element.cognome, element.email, element.username, element.password, element.cartaCredito, element.sesso));
+    }
+  }
 
   makeCompactRequest(nome: HTMLInputElement, cognome: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement, sesso: HTMLInputElement): boolean {
     this.tempUt = new Registrazione(nome.value, cognome.value, email.value, username.value, password.value, cartaCredito.value, sesso.value);
@@ -33,5 +53,12 @@ export class AppComponent {
 
     return false;
   }
+
+  public toggle1(): void { this.isViewable1 = !this.isViewable1; }
+  public toggle2(): void { this.isViewable2 = !this.isViewable2; }
+  public toggle3(): void { this.isViewable3 = !this.isViewable3; }
+  public toggle4(): void { this.isViewable4 = !this.isViewable4; }
+  public toggle5(): void { this.isViewable5 = !this.isViewable5; }
+
 
 }

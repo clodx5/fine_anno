@@ -4,6 +4,10 @@
   font-family: Arial;
 }
 
-.componenti, .jumbotron {
-  margin-top: 100px;
+.menu {
+  margin-top: 50px;
+}
+
+.componenti {
+  margin-top: 150px;
 }

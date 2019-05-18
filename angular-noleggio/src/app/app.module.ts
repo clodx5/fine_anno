@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RegistrazioneComponent } from './registrazione/registrazione.component';
@@ -19,7 +20,7 @@ import { SegnalazioneComponent } from './segnalazione/segnalazione.component';
     SegnalazioneComponent
   ],
   imports: [
-    BrowserModule, NgbModule
+    BrowserModule, NgbModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
