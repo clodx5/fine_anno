@@ -19,6 +19,7 @@ export class AppComponent {
   postUt: Observable<Object>;
   tempUt: Registrazione;
 
+  // var per mostra-nascondi
   public isViewable1: boolean;
   public isViewable2: boolean;
   public isViewable3: boolean;
@@ -54,11 +55,42 @@ export class AppComponent {
     return false;
   }
 
-  public toggle1(): void { this.isViewable1 = !this.isViewable1; }
-  public toggle2(): void { this.isViewable2 = !this.isViewable2; }
-  public toggle3(): void { this.isViewable3 = !this.isViewable3; }
-  public toggle4(): void { this.isViewable4 = !this.isViewable4; }
-  public toggle5(): void { this.isViewable5 = !this.isViewable5; }
+  // mostra-nascondi
+  public toggle1(): void {
+    this.isViewable1 = true;
+    this.isViewable2 = false;
+    this.isViewable3 = false;
+    this.isViewable4 = false;
+    this.isViewable5 = false;
+  }
+  public toggle2(): void {
+    this.isViewable1 = false;
+    this.isViewable2 = true;
+    this.isViewable3 = false;
+    this.isViewable4 = false;
+    this.isViewable5 = false;
+  }
+  public toggle3(): void {
+    this.isViewable1 = false;
+    this.isViewable2 = false;
+    this.isViewable3 = true;
+    this.isViewable4 = false;
+    this.isViewable5 = false;
+  }
+  public toggle4(): void {
+    this.isViewable1 = false;
+    this.isViewable2 = false;
+    this.isViewable3 = false;
+    this.isViewable4 = true;
+    this.isViewable5 = false;
+  }
+  public toggle5(): void {
+    this.isViewable1 = false;
+    this.isViewable2 = false;
+    this.isViewable3 = false;
+    this.isViewable4 = false;
+    this.isViewable5 = true;
+  }
 
 
 }
