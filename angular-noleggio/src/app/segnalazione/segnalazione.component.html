@@ -1,3 +1,28 @@
-<p>
-  segnalazione works!
-</p>
+<div class="container">
+  <div class="col-md-6">
+    <h2>Segnalazione guasto</h2>
+    <form action="" class="was-validated">
+
+      <div class="form-group">
+        <label>Codice monopattino:</label>
+        <input type="text" class="form-control" placeholder="Inserisci id" name="id_mono" #newid required>
+        <div class="valid-feedback">Ok</div><div class="invalid-feedback">Riempi questo campo</div>
+      </div>
+
+      <div class="form-group">
+        <label>Problematiche:</label>
+        <select multiple class="form-control" id="prob" #newprob required>
+          <option>Non specificato</option>
+          <option>Manubrio</option>
+          <option>Ruota anteriore</option>
+          <option>Ruota posteriore</option>
+          <option>Motore elettrico</option>
+          <option>GPS</option>
+        </select>
+        <div class="valid-feedback">Ok</div><div class="invalid-feedback">Seleziona almeno un'opzione</div>
+      </div>
+
+      <button type="submit" class="btn btn-danger" id="registrati" (click)="makeCompactRequest(newnome, newcognome, newemail, newuname, newpw, newcc, newses)">Invia segnalazione</button>
+    </form>
+  </div>
+</div>
