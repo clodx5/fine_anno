@@ -1,3 +1,10 @@
-<p>
-  noleggio works!
-</p>
+<div class="container">
+    <h2>Noleggia un monopattino</h2>
+    <p>Ecco i monopattini disponibili: </p>
+
+    <!-- Mappa -->
+    <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+
+</div>
