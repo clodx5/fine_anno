@@ -25,7 +25,7 @@ import { SegnalazioneComponent } from './segnalazione/segnalazione.component';
     NgbModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'YOUR_KEY'
+      apiKey: 'AIzaSyC2EHOR-vc7CtV4IF_uV2Rl4Gu8KNa0YEU'
     })
   ],
   providers: [],

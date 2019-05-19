@@ -12,9 +12,6 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'AngularNoleggio';
 
-  lat: number = 51.678418;
-  lng: number = 7.809007;
-
   utenti: Registrazione[];
   data: Object;
   loading: boolean;
