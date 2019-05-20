@@ -29,7 +29,7 @@ export class AppComponent {
   constructor(public http: HttpClient) {
     //get
     this.utenti = new Array<Registrazione>();
-    this.oUt = this.http.get<Registrazione[]>('link');
+    this.oUt = this.http.get<Registrazione[]>('http://node24.codenvy.io:33414/registrazione');
     this.oUt.subscribe(this.ricevidati);
   }
 
@@ -44,7 +44,7 @@ export class AppComponent {
   makeCompactRequest(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, cf: HTMLInputElement, sesso: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): boolean {
     this.tempUt = new Registrazione(nome.value, cognome.value, dataN.value, cf.value, sesso.value, email.value, username.value, password.value, cartaCredito.value);
     this.loading = true;
-    this.postUt = this.http.post('http://node22.codenvy.io:33543/registrazione', JSON.stringify(this.tempUt));
+    this.postUt = this.http.post('http://node24.codenvy.io:33414/registrazione', JSON.stringify(this.tempUt));
     this.utenti.push(new Registrazione(nome.value, cognome.value, dataN.value, cf.value, sesso.value, email.value, username.value, password.value, cartaCredito.value));
 
     this.postUt.subscribe(data => {
