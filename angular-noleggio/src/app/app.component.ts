@@ -36,16 +36,16 @@ export class AppComponent {
   ricevidati = (data) => {
     for(let element of data)
     {
-       this.utenti.push(new Registrazione(element.nome, element.cognome, element.email, element.username, element.password, element.cartaCredito, element.sesso));
+       this.utenti.push(new Registrazione(element.nome, element.cognome, element. dataN, element.cf, element.sesso, element.email, element.username, element.password, element.cartaCredito));
     }
   }
 
   // registrazione
-  makeCompactRequest(nome: HTMLInputElement, cognome: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement, sesso: HTMLInputElement): boolean {
-    this.tempUt = new Registrazione(nome.value, cognome.value, email.value, username.value, password.value, cartaCredito.value, sesso.value);
+  makeCompactRequest(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, cf: HTMLInputElement, sesso: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): boolean {
+    this.tempUt = new Registrazione(nome.value, cognome.value, dataN.value, cf.value, sesso.value, email.value, username.value, password.value, cartaCredito.value);
     this.loading = true;
-    this.postUt = this.http.post('link', JSON.stringify(this.tempUt));
-    this.utenti.push(new Registrazione(nome.value, cognome.value, email.value, username.value, password.value, cartaCredito.value, sesso.value));
+    this.postUt = this.http.post('http://node22.codenvy.io:33543/registrazione', JSON.stringify(this.tempUt));
+    this.utenti.push(new Registrazione(nome.value, cognome.value, dataN.value, cf.value, sesso.value, email.value, username.value, password.value, cartaCredito.value));
 
     this.postUt.subscribe(data => {
       this.data = data;
