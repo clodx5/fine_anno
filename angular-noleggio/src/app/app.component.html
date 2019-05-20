@@ -7,28 +7,28 @@
   <!-- Bottoni per mostra/nascondi -->
   <div class="navbar justify-content-center menu fixed-top">
     <div class="btn-group">
-      <button type="button" class="btn btn-primary" (click)='toggle1()'>Registrazione</button>
-      <button type="button" class="btn btn-secondary" (click)='toggle2()'>Login</button>
-      <button type="button" class="btn btn-success" (click)='toggle3()'>Noleggio</button>
-      <button type="button" class="btn btn-warning" (click)='toggle4()'>Riconsegna</button>
-      <button type="button" class="btn btn-danger" (click)='toggle5()'>Segnalazione</button>
+      <button type="button" class="btn btn-primary" (click)='regis()'>Registrazione</button>
+      <button type="button" class="btn btn-secondary" (click)='login()'>Login</button>
+      <button type="button" class="btn btn-success" (click)='noleg()'>Noleggio</button>
+      <button type="button" class="btn btn-warning" (click)='ricon()'>Riconsegna</button>
+      <button type="button" class="btn btn-danger" (click)='segn()'>Segnalazione</button>
     </div>
   </div>
 
   <div class="componenti">
     <!-- Registrazione -->
-    <app-registrazione *ngIf='isViewable1'></app-registrazione>
+    <app-registrazione *ngIf='reg'></app-registrazione>
 
     <!-- Login -->
-    <app-login *ngIf='isViewable2'></app-login>
+    <app-login *ngIf='log'></app-login>
 
     <!-- Noleggio -->
-    <app-noleggio *ngIf='isViewable3'></app-noleggio>
+    <app-noleggio *ngIf='nol'></app-noleggio>
 
     <!-- Riconsegna -->
-    <app-riconsegna *ngIf='isViewable4'></app-riconsegna>
+    <app-riconsegna *ngIf='ric'></app-riconsegna>
 
     <!-- Segnalazione -->
-    <app-segnalazione *ngIf='isViewable5'></app-segnalazione>
+    <app-segnalazione *ngIf='seg'></app-segnalazione>
   </div>
 </div>

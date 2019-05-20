@@ -20,11 +20,11 @@ export class AppComponent {
   tempUt: Registrazione;
 
   // var per mostra-nascondi
-  public isViewable1: boolean;
-  public isViewable2: boolean;
-  public isViewable3: boolean;
-  public isViewable4: boolean;
-  public isViewable5: boolean;
+  public reg: boolean;
+  public log: boolean;
+  public nol: boolean;
+  public ric: boolean;
+  public seg: boolean;
 
   constructor(public http: HttpClient) {
     //get
@@ -57,40 +57,40 @@ export class AppComponent {
   }
 
   // mostra-nascondi
-  public toggle1(): void {
-    this.isViewable1 = true;
-    this.isViewable2 = false;
-    this.isViewable3 = false;
-    this.isViewable4 = false;
-    this.isViewable5 = false;
+  public regis(): void {
+    this.reg = true;
+    this.log = false;
+    this.nol = false;
+    this.ric = false;
+    this.seg = false;
   }
-  public toggle2(): void {
-    this.isViewable1 = false;
-    this.isViewable2 = true;
-    this.isViewable3 = false;
-    this.isViewable4 = false;
-    this.isViewable5 = false;
+  public login(): void {
+    this.reg = false;
+    this.log = true;
+    this.nol = false;
+    this.ric = false;
+    this.seg = false;
   }
-  public toggle3(): void {
-    this.isViewable1 = false;
-    this.isViewable2 = false;
-    this.isViewable3 = true;
-    this.isViewable4 = false;
-    this.isViewable5 = false;
+  public noleg(): void {
+    this.reg = false;
+    this.log = false;
+    this.nol = true;
+    this.ric = false;
+    this.seg = false;
   }
-  public toggle4(): void {
-    this.isViewable1 = false;
-    this.isViewable2 = false;
-    this.isViewable3 = false;
-    this.isViewable4 = true;
-    this.isViewable5 = false;
+  public ricon(): void {
+    this.reg = false;
+    this.log = false;
+    this.nol = false;
+    this.ric = true;
+    this.seg = false;
   }
-  public toggle5(): void {
-    this.isViewable1 = false;
-    this.isViewable2 = false;
-    this.isViewable3 = false;
-    this.isViewable4 = false;
-    this.isViewable5 = true;
+  public segn(): void {
+    this.reg = false;
+    this.log = false;
+    this.nol = false;
+    this.ric = false;
+    this.seg = true;
   }
 
 
