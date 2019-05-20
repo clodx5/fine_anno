@@ -25,6 +25,9 @@ export class AppComponent {
   public nol: boolean;
   public ric: boolean;
   public seg: boolean;
+  public err: boolean;
+
+  public username = "";
 
   constructor(public http: HttpClient) {
     //get
@@ -56,6 +59,12 @@ export class AppComponent {
     return false;
   }
 
+  //login
+  makelogin(user: HTMLInputElement, pw: HTMLInputElement): boolean {
+      //post a server node per verificare credenziali
+    return false;
+  }
+
   // mostra-nascondi
   public regis(): void {
     this.reg = true;
@@ -63,6 +72,7 @@ export class AppComponent {
     this.nol = false;
     this.ric = false;
     this.seg = false;
+    this.err = false;
   }
   public login(): void {
     this.reg = false;
@@ -70,27 +80,55 @@ export class AppComponent {
     this.nol = false;
     this.ric = false;
     this.seg = false;
+    this.err = false;
   }
   public noleg(): void {
-    this.reg = false;
-    this.log = false;
-    this.nol = true;
-    this.ric = false;
-    this.seg = false;
+      if(this.username!="") {
+        this.reg = false;
+        this.log = false;
+        this.nol = true;
+        this.ric = false;
+        this.seg = false;
+      } else {
+        this.reg = false;
+        this.log = false;
+        this.nol = false;
+        this.ric = false;
+        this.seg = false;
+        this.err = true;
+      }
   }
   public ricon(): void {
-    this.reg = false;
-    this.log = false;
-    this.nol = false;
-    this.ric = true;
-    this.seg = false;
+    if(this.username!="") {
+        this.reg = false;
+        this.log = false;
+        this.nol = false;
+        this.ric = true;
+        this.seg = false;
+    } else {
+        this.reg = false;
+        this.log = false;
+        this.nol = false;
+        this.ric = false;
+        this.seg = false;
+        this.err = true;
+    }
   }
   public segn(): void {
-    this.reg = false;
-    this.log = false;
-    this.nol = false;
-    this.ric = false;
-    this.seg = true;
+      if(this.username!="") {
+        this.reg = false;
+        this.log = false;
+        this.nol = false;
+        this.ric = false;
+        this.seg = true;
+    } else {
+        this.reg = false;
+        this.log = false;
+        this.nol = false;
+        this.ric = false;
+        this.seg = false;
+        this.err = true;
+    }
   }
 
 
