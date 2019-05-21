@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Registrazione } from './registrazione/registrazione.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
@@ -12,12 +12,7 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'AngularNoleggio';
 
-  utenti: Registrazione[];
   data: Object;
-  loading: boolean;
-  oUt: Observable<Registrazione[]>;
-  postUt: Observable<Object>;
-  tempUt: Registrazione;
 
   // var per mostra-nascondi
   public reg: boolean;
@@ -29,34 +24,41 @@ export class AppComponent {
 
   public username = "";
 
-  constructor(public http: HttpClient) {
-    //get
-    this.utenti = new Array<Registrazione>();
-    this.oUt = this.http.get<Registrazione[]>('http://node24.codenvy.io:33414/registrazione');
-    this.oUt.subscribe(this.ricevidati);
-  }
+  constructor(public http: HttpClient) {}
 
-  ricevidati = (data) => {
-    for(let element of data)
-    {
-       this.utenti.push(new Registrazione(element.nome, element.cognome, element. dataN, element.cf, element.sesso, element.email, element.username, element.password, element.cartaCredito));
-    }
-  }
 
   // registrazione
-  makeCompactRequest(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, cf: HTMLInputElement, sesso: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): boolean {
-    this.tempUt = new Registrazione(nome.value, cognome.value, dataN.value, cf.value, sesso.value, email.value, username.value, password.value, cartaCredito.value);
-    this.loading = true;
-    this.postUt = this.http.post('http://node24.codenvy.io:33414/registrazione', JSON.stringify(this.tempUt));
-    this.utenti.push(new Registrazione(nome.value, cognome.value, dataN.value, cf.value, sesso.value, email.value, username.value, password.value, cartaCredito.value));
+  registrazione(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, cf: HTMLInputElement, sesso: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): void {
 
-    this.postUt.subscribe(data => {
-      this.data = data;
-      this.loading = false;
-      this.utenti.push(this.tempUt);
-    });
+   const headers = new HttpHeaders({
+       'Content-Type': 'application/x-www-form-urlencoded'
+   });
 
-    return false;
+   const params = new HttpParams()
+    .set('nome', nome.value)
+    .set('cognome', cognome.value)
+    .set('dataN', dataN.value);
+    // ...
+
+    //TOGLIERE CF E SEX
+
+    const options = {
+      headers,
+      params,
+      withCredentials: false
+    };
+
+    this.http.post('http://node24.codenvy.io:33414/registrazione', null, options)
+     .subscribe(data => {
+       this.data = data;
+        if(data == true){
+          alert("ok");
+       }else{
+          alert("err");
+       }
+     });
+
+
   }
 
   //login
@@ -65,7 +67,7 @@ export class AppComponent {
     return false;
   }
 
-  // mostra-nascondi
+  // mostra-nascondi _________________________________
   public regis(): void {
     this.reg = true;
     this.log = false;
@@ -130,6 +132,7 @@ export class AppComponent {
         this.err = true;
     }
   }
+//_____________________________________________________________________
 
 
 }

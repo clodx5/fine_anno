@@ -22,22 +22,6 @@
       </div>
 
       <div class="form-group">
-        <label>Codice fiscale:</label>
-        <input type="text" class="form-control" placeholder="" name="cf" #newcf required>
-        <div class="invalid-feedback">Riempi questo campo</div>
-      </div>
-
-      <div class="form-group">
-        <label>Sesso:</label>
-        <select class="form-control" id="sel1" #newses required>
-          <option>Non specificato</option>
-          <option>M</option>
-          <option>F</option>
-        </select>
-        <div class="invalid-feedback">Seleziona un'opzione</div>
-      </div>
-
-      <div class="form-group">
         <label>Email:</label>
         <input type="text" class="form-control" placeholder="" name="email" #newemail required>
         <div class="invalid-feedback">Riempi questo campo</div>
@@ -68,7 +52,7 @@
         </label>
       </div>
 
-      <button type="submit" class="btn btn-primary" id="registrati" (click)="makeCompactRequest(newnome, newcognome, newdatan, newcf, newses, newemail, newuname, newpw, newcc)">Registrati</button>
+      <button type="submit" class="btn btn-primary" id="registrati" (click)="registrazione(newnome, newcognome, newdatan, newemail, newuname, newpw, newcc)">Registrati</button>
     </form>
   </div>
 </div>
