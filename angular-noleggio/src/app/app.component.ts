@@ -28,7 +28,7 @@ export class AppComponent {
 
 
   // registrazione
-  registrazione(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, cf: HTMLInputElement, sesso: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): void {
+  registrazione(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): void {
 
    const headers = new HttpHeaders({
        'Content-Type': 'application/x-www-form-urlencoded'
@@ -37,10 +37,11 @@ export class AppComponent {
    const params = new HttpParams()
     .set('nome', nome.value)
     .set('cognome', cognome.value)
-    .set('dataN', dataN.value);
-    // ...
-
-    //TOGLIERE CF E SEX
+    .set('dataN', dataN.value)
+    .set('email', email.value)
+    .set('username', username.value)
+    .set('password', password.value)
+    .set('cartaCredito', cartaCredito.value);
 
     const options = {
       headers,
