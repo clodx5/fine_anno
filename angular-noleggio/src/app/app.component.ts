@@ -28,7 +28,7 @@ export class AppComponent {
 
 
   // registrazione
-  nuovoUtente(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): boolean {
+  makeRegis(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): boolean {
     this.registrazione(nome.value, cognome.value , dataN.value, email.value, username.value, password.value, cartaCredito.value);
     console.log(nome.value);
     console.log("ciao1");
@@ -73,10 +73,46 @@ export class AppComponent {
 
 
   //login
-  makelogin(user: HTMLInputElement, pw: HTMLInputElement): boolean {
+  makeLogin(user: HTMLInputElement, pw: HTMLInputElement): boolean {
       //post a server node per verificare credenziali
     return false;
   }
+
+  login(): void {
+
+  }
+
+  //noleggio
+  makeNoleggio(idmono: HTMLInputElement): boolean {
+      this.noleggio(idmono.value); //aggiungere id utente, ora, etc
+      return false;
+  }
+
+  noleggio(idmono:string): void {
+
+  }
+
+
+  //riconsegna
+  makeRicon(idmono: HTMLInputElement): boolean {
+      this.riconsegna(idmono.value);
+      return false;
+  }
+
+  riconsegna(idmono:string): void {
+
+  }
+
+  //segnalazione
+  makeSegn(idmono: HTMLInputElement, problemi: HTMLInputElement): boolean {
+      this.segnalazione(idmono.value, problemi.value);
+      return false;
+  }
+
+  segnalazione(idmono:string, problemi:Object): void {
+
+  }
+
 
   // mostra-nascondi _________________________________
   public regis(): void {
@@ -87,7 +123,7 @@ export class AppComponent {
     this.seg = false;
     this.err = false;
   }
-  public login(): void {
+  public logi(): void {
     this.reg = false;
     this.log = true;
     this.nol = false;
