@@ -28,20 +28,30 @@ export class AppComponent {
 
 
   // registrazione
-  registrazione(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): void {
+  nuovoUtente(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): boolean {
+    this.registrazione(nome.value, cognome.value , dataN.value, email.value, username.value, password.value, cartaCredito.value);
+    console.log(nome.value);
+    console.log("ciao1");
+    return false;
+  }
 
-   const headers = new HttpHeaders({
+  registrazione(nome:string, cognome:string, dataN:string, email:string, username:string, password:string, cartaCredito:string): void {
+
+    console.log(nome);
+    console.log("ciao2");
+
+    const headers = new HttpHeaders({
        'Content-Type': 'application/x-www-form-urlencoded'
-   });
+    });
 
    const params = new HttpParams()
-    .set('nome', nome.value)
-    .set('cognome', cognome.value)
-    .set('dataN', dataN.value)
-    .set('email', email.value)
-    .set('username', username.value)
-    .set('password', password.value)
-    .set('cartaCredito', cartaCredito.value);
+    .set('nome', nome)
+    .set('cognome', cognome)
+    .set('dataN', dataN)
+    .set('email', email)
+    .set('username', username)
+    .set('password', password)
+    .set('cartaCredito', cartaCredito);
 
     const options = {
       headers,
@@ -49,7 +59,7 @@ export class AppComponent {
       withCredentials: false
     };
 
-    this.http.post('http://node24.codenvy.io:33414/registrazione', null, options)
+    this.http.post('http://node19.codenvy.io:36436/registrazione', null, options)
      .subscribe(data => {
        this.data = data;
         if(data == true){
@@ -58,9 +68,9 @@ export class AppComponent {
           alert("err");
        }
      });
-
-
   }
+
+
 
   //login
   makelogin(user: HTMLInputElement, pw: HTMLInputElement): boolean {
@@ -135,5 +145,7 @@ export class AppComponent {
   }
 //_____________________________________________________________________
 
+ngOnInit() {
+  }
 
 }
