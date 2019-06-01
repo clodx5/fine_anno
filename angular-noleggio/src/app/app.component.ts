@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Registrazione } from './registrazione/registrazione.model';
+import { Login } from './login/login.model';
+import { Segnalazione } from './segnalazione/segnalazione.model';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
@@ -30,8 +32,6 @@ export class AppComponent {
   // registrazione
   makeRegis(nome: HTMLInputElement, cognome: HTMLInputElement, dataN: HTMLInputElement, email: HTMLInputElement, username: HTMLInputElement, password: HTMLInputElement, cartaCredito: HTMLInputElement): boolean {
     this.registrazione(nome.value, cognome.value , dataN.value, email.value, username.value, password.value, cartaCredito.value);
-    console.log(nome.value);
-    console.log("ciao1");
     return false;
   }
 
