@@ -37,9 +37,6 @@ export class AppComponent {
 
   registrazione(nome:string, cognome:string, dataN:string, email:string, username:string, password:string, cartaCredito:string): void {
 
-    console.log(nome);
-    console.log("ciao2");
-
     const headers = new HttpHeaders({
        'Content-Type': 'application/x-www-form-urlencoded'
     });
@@ -104,12 +101,19 @@ export class AppComponent {
   }
 
   //segnalazione
-  makeSegn(idmono: HTMLInputElement, problemi: HTMLInputElement): boolean {
-      this.segnalazione(idmono.value, problemi.value);
+  makeSegn(idmono: HTMLInputElement, problemi: HTMLInputElement[]): boolean {
+      var probs = [];
+      problemi.forEach(myFunction);
+
+      function myFunction(value, index, array) {
+        probs.push(value);
+      }
+
+      this.segnalazione(idmono.value, probs);
       return false;
   }
 
-  segnalazione(idmono:string, problemi:Object): void {
+  segnalazione(idmono:string, problemi:string[]): void {
 
   }
 
