@@ -105,7 +105,7 @@ export class AppComponent {
       var probs = [];
       problemi.forEach(myFunction);
 
-      function myFunction(value, index, array) {
+      function myFunction(value) {
         probs.push(value);
       }
 
@@ -114,6 +114,30 @@ export class AppComponent {
   }
 
   segnalazione(idmono:string, problemi:string[]): void {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
+
+   const params = new HttpParams()
+    .set('idmono', idmono)
+    .set('problemi', problemi);
+
+    const options = {
+      headers,
+      params,
+      withCredentials: false
+    };
+
+    this.http.post('http://node19.codenvy.io:36436/segnalazione', null, options)
+     .subscribe(data => {
+       this.data = data;
+        if(data == true){
+          alert("ok");
+       }else{
+          alert("err");
+       }
+     });
 
   }
 
