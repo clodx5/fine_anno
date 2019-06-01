@@ -72,11 +72,34 @@ export class AppComponent {
   //login
   makeLogin(user: HTMLInputElement, pw: HTMLInputElement): boolean {
       //post a server node per verificare credenziali
+    this.login(user.value, pw.value);
     return false;
   }
 
-  login(): void {
+  login(user: string, password: string): void {
+      const headers = new HttpHeaders({
+       'Content-Type': 'application/x-www-form-urlencoded'
+    });
 
+   const params = new HttpParams()
+    .set('nome', user)
+    .set('cognome', password);
+
+    const options = {
+      headers,
+      params,
+      withCredentials: false
+    };
+
+    this.http.post('http://node19.codenvy.io:36436/login', null, options)
+     .subscribe(data => {
+       this.data = data;
+        if(data == true){
+          alert("ok");
+       }else{
+          alert("err");
+       }
+     });
   }
 
   //noleggio
