@@ -19,7 +19,8 @@ export class AppComponent {
   public err: boolean;
 
   //se utente non loggato non mostra noleggio-riconsegna-segnalazione
-  public username = "";
+  //public username = "";
+  public username = "a";
 
   constructor() {}
 
@@ -47,6 +48,7 @@ export class AppComponent {
         this.nol = true;
         this.ric = false;
         this.seg = false;
+        this.err = false;
       } else {
         this.reg = false;
         this.log = false;
@@ -63,6 +65,7 @@ export class AppComponent {
         this.nol = false;
         this.ric = true;
         this.seg = false;
+        this.err = false;
     } else {
         this.reg = false;
         this.log = false;
@@ -79,6 +82,7 @@ export class AppComponent {
         this.nol = false;
         this.ric = false;
         this.seg = true;
+        this.err = false;
     } else {
         this.reg = false;
         this.log = false;

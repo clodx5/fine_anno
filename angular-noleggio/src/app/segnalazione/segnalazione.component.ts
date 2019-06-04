@@ -33,7 +33,7 @@ export class SegnalazioneComponent implements OnInit {
 
    const params = new HttpParams()
     .set('idmono', idmono)
-    .set('problemi', problemi);
+    .set('problemi', JSON.stringify(problemi));
 
     const options = {
       headers,
