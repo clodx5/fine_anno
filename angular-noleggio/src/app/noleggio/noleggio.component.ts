@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Noleggio } from './noleggio.model';
 
 @Component({
   selector: 'app-noleggio',

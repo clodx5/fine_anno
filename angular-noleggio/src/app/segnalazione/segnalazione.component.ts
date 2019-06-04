@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Segnalazione } from './segnalazione.model';
 
 @Component({
   selector: 'app-segnalazione',

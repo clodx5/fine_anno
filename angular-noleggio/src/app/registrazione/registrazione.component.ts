@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Registrazione } from './registrazione.model';
 
 @Component({
   selector: 'app-registrazione',
