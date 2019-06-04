@@ -9,6 +9,7 @@ import { Login } from './login.model';
 })
 export class LoginComponent implements OnInit {
 
+  username = "";
   data: Object;
   constructor(public http: HttpClient) {}
 

@@ -7,4 +7,14 @@
         <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
     </agm-map>
 
+    <form action="">
+      <div class="form-group">
+        <label>Codice monopattino:</label>
+        <input type="text" class="form-control" placeholder="id monopattino" name="idmono" #idmono required>
+      </div>
+
+      <!-- L'id dell'utente verrà preso da sessione -->
+      <button type="submit" class="btn btn-success" id="entra" (click)="makeNoleggio(idmono)">Start noleggio</button>
+    </form>
+
 </div>

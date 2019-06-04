@@ -1,15 +1,15 @@
 <div class="container">
   <div class="col-md-6">
-    <h2>Segnala un guasto</h2>
+    <h2>Riconsegna monopattino</h2>
     <form action="" class="was-validated">
 
       <div class="form-group">
         <label>Codice monopattino:</label>
-        <input type="text" class="form-control" placeholder="Inserisci id" name="id_mono" #idmono required>
+        <input type="text" class="form-control" placeholder="Inserisci id" name="idmono" #idmono required>
         <div class="invalid-feedback">Riempi questo campo</div>
       </div>
 
-      <button type="submit" class="btn btn-warning" id="riconsegna" (click)="riconsegna(idmono)">Interrompi noleggio</button>
+      <button type="submit" class="btn btn-warning" id="riconsegna" (click)="makeRicon(idmono)">Interrompi noleggio</button>
     </form>
   </div>
 </div>
